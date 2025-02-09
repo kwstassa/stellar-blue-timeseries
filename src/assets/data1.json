@@ -1,0 +1,21 @@
+[
+    {
+      "DateTime": "2024-02-01T00:00:00",
+      "ENTSOE_DE_DAM_Price": "39.73",
+      "ENTSOE_GR_DAM_Price": "89",
+      "ENTSOE_FR_DAM_Price": "44.31"
+    },
+    {
+      "DateTime": "2024-02-01T01:00:00",
+      "ENTSOE_DE_DAM_Price": "47.06",
+      "ENTSOE_GR_DAM_Price": "89.23",
+      "ENTSOE_FR_DAM_Price": "51.9"
+    },
+    {
+      "DateTime": "2024-02-01T02:00:00",
+      "ENTSOE_DE_DAM_Price": "41.12",
+      "ENTSOE_GR_DAM_Price": "85.9",
+      "ENTSOE_FR_DAM_Price": "46.99"
+    }
+  ]
+  
