@@ -116,6 +116,6 @@ export default {
   margin-bottom: 20px;
 }
 .card-body {
-  height: 700px; /* Adjust as needed */
+  height: 600px; /* Adjust as needed */
 }
 </style>
