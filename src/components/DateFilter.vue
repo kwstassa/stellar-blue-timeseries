@@ -1,35 +1,33 @@
 <template>
-  <div class="mb-3">
-    <div class="row align-items-end">
-      <!-- Πεδίο εισόδου για την αρχική ημερομηνία/ώρα -->
-      <div class="col-md-4">
-        <label for="start" class="form-label">Start DateTime:</label>
-        <input
-          type="datetime-local"
-          v-model="startDate"
-          id="start"
-          class="form-control"
-        />
-      </div>
-      <!-- Πεδίο εισόδου για την τελική ημερομηνία/ώρα -->
-      <div class="col-md-4">
-        <label for="end" class="form-label">End DateTime:</label>
-        <input
-          type="datetime-local"
-          v-model="endDate"
-          id="end"
-          class="form-control"
-        />
-      </div>
-      <!-- Κουμπιά για εφαρμογή και καθαρισμό του φίλτρου -->
-      <div class="col-md-4">
-        <button @click="applyFilter" class="btn btn-primary me-2">
-          Apply Filter
-        </button>
-        <button @click="clearFilter" class="btn btn-secondary">
-          Clear Filter
-        </button>
-      </div>
+  <!-- Flex container με κεντράρισμα, ευθυγράμμιση και gap μεταξύ των στοιχείων -->
+  <div class="mb-3 d-flex flex-md-row flex-column justify-content-center ">
+    <!-- Πεδίο για Start DateTime -->
+    <div class="d-flex flex-column"style="margin-right:5%">
+      <label for="start" class="form-label">Start DateTime:</label>
+      <!-- Ορίζουμε πλάτος (π.χ. 220px) για να διατηρείται ομοιόμορφη εμφάνιση -->
+      <input
+        type="datetime-local"
+        v-model="startDate"
+        id="start"
+        class="form-control"
+        style="width: 220px;"
+      />
+    </div>
+    <!-- Πεδίο για End DateTime -->
+    <div class="d-flex flex-column" style="margin-right:2%; height:38px">
+      <label for="end" class="form-label">End DateTime:</label>
+      <input
+        type="datetime-local"
+        v-model="endDate"
+        id="end"
+        class="form-control"
+        style="width: 220px;"
+      />
+    </div>
+    <!-- Κουμπιά Apply/ Clear Filter -->
+    <div class="d-flex  flex-md-row flex-column justify-content-md-center justify-content-start ">
+      <button @click="applyFilter"class="btn btn-primary text-nowrap" style="margin-right:5%; margin-top: 30px;">Apply Filter</button>
+      <button @click="clearFilter" class="btn btn-secondary text-nowrap" style="margin-right:5%;  margin-top: 30px;">Clear Filter</button>
     </div>
   </div>
 </template>
@@ -45,23 +43,19 @@ export default {
   },
   methods: {
     applyFilter() {
-      // Ελέγχουμε αν έχουν επιλεχθεί και οι δύο τιμές
       if (this.startDate && this.endDate) {
         const start = new Date(this.startDate);
         const end = new Date(this.endDate);
-        // Έλεγχος: αν η αρχική ημερομηνία είναι μετά την τελική, εμφανίζουμε μήνυμα σφάλματος
         if (start > end) {
           alert("Error: The start date must be before the end date.");
           return;
         }
-        // Αν οι ημερομηνίες είναι έγκυρες, εκπέμπουμε το event με το διάστημα [start, end]
         this.$emit('filter-change', [start, end]);
       } else {
         alert("Please select both start and end dates.");
       }
     },
     clearFilter() {
-      // Καθαρίζουμε τα πεδία και εκπέμπουμε ένα κενό φίλτρο για επαναφορά των δεδομένων
       this.startDate = '';
       this.endDate = '';
       this.$emit('filter-change', []);
