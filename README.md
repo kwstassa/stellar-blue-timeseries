@@ -1,9 +1,55 @@
-<<<<<<< HEAD
-# Vue 3 + Vite
+# Timeseries Data Visualization
 
-This template should help get you started developing with Vue 3 in Vite. The template uses Vue 3 `<script setup>` SFCs, check out the [script setup docs](https://v3.vuejs.org/api/sfc-script-setup.html#sfc-script-setup) to learn more.
+Αυτό το repository περιέχει μια web εφαρμογή για την απεικόνιση δεδομένων χρονικών σειρών (timeseries) που αναπτύχθηκε με Vue.js. Η εφαρμογή επιτρέπει στους χρήστες να:
+- Δουν τα δεδομένα σε πίνακα και σε γραμμικό διάγραμμα (line chart).
+- Φιλτράρουν τα δεδομένα βάσει χρονικού διαστήματος (date range).
+- Επεξεργαστούν τιμές απευθείας μέσα στον πίνακα με ενσωματωμένους ελέγχους εγκυρότητας.
+- Επιλέξουν ποιες σειρές δεδομένων να εμφανίζονται μέσω ενός toggle.
 
-Learn more about IDE Support for Vue in the [Vue Docs Scaling up Guide](https://vuejs.org/guide/scaling-up/tooling.html#ide-support).
-=======
-# stellar_blue_assignment
->>>>>>> c17d0ed3f4295a3736bc41cbf4a51748ad3d809f
+---
+
+## Δομή του Project
+
+- **index.html**  
+  Το βασικό αρχείο HTML που φορτώνει την εφαρμογή.
+
+- **public/**  
+  Περιέχει στατικά assets (π.χ., favicon).
+
+- **src/**  
+  Περιέχει τον πηγαίο κώδικα της εφαρμογής:
+  - **main.js**: Το entry point της εφαρμογής.
+  - **App.vue**: Το κύριο component που οργανώνει και ενσωματώνει τα άλλα components.
+  - **components/**: Περιέχει τα εξειδικευμένα components:
+    - **DataTable.vue**: Component που εμφανίζει τα δεδομένα σε πίνακα και υποστηρίζει σελιδοποίηση.
+    - **LineChart.vue**: Component που δημιουργεί το γραμμικό διάγραμμα με Chart.js.
+    - **DateFilter.vue**: Component για επιλογή και εφαρμογή φίλτρων ημερομηνίας/ώρας.
+    - **TimeseriesToggle.vue**: Component για την επιλογή των σειρών που θα εμφανίζονται.
+
+---
+
+## Τεχνολογίες
+
+Η εφαρμογή αναπτύχθηκε με τις εξής τεχνολογίες:
+- **Vue.js**: Για το component-based design και την reactivity.
+- **Vite**: Για γρήγορη ανάπτυξη και build.
+- **Chart.js**: Για τη δημιουργία του γραμμικού διαγράμματος.
+- **Day.js**: Για τη διαχείριση και μορφοποίηση ημερομηνιών.
+- **Bootstrap**: Για responsive και μοντέρνα σχεδίαση της διεπαφής χρήστη.
+
+---
+
+## Οδηγίες Εγκατάστασης και Εκτέλεσης
+
+### Προαπαιτούμενα
+- Node.js (συνιστάται η τελευταία σταθερή έκδοση)
+- npm (που εγκαθίσταται αυτόματα με το Node.js)
+
+### Βήματα
+1. **Κλωνοποίηση του Repository:**
+   git clone <repository_url>
+   cd stellar-blue-timeseries
+2. **Εγκατάσταση Εξαρτήσεων:**
+npm install
+3. **Εκτέλεση της Εφαρμογής σε Development Mode:**
+npm run devΑνοίξτε το πρόγραμμα περιήγησής σας και επισκεφθείτε: http://localhost:5173
